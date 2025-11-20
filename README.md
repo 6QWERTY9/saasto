@@ -6,11 +6,11 @@ Saasto — лендинг-страница для приложения по от
 **Макете взят из открытых источников и используется только в учебных целя.**
 
 ## Стек технологий
-*React 18+ (хуки)
-*TypeScript
-*SCSS Modules
-*Vite
-*ESLint, Prettier
+* React 18+ (хуки)
+* TypeScript
+* SCSS Modules
+* Vite
+* ESLint, Prettier
 
 ---
 
