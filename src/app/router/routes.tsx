@@ -2,6 +2,7 @@
 import type { RouteObject } from 'react-router-dom'; // Импорт типа из react-router-dom
 import { ROUTE_PATHS } from './routesPath';
 import { LoginPage } from '@pages/login/login';
+import { Home } from '@pages/homePage/home';
 
 // Определяем тип для маршрута с мета-информацией
 interface RouteMeta {
@@ -15,6 +16,11 @@ interface AppRoute extends Omit<RouteObject, 'children'> {
 
 // Массив маршрутов
 export const routes: AppRoute[] = [
+    {
+        path: ROUTE_PATHS.HOME,
+        element: <Home/>,
+        meta: {title: 'home page'}
+    },
     {
         path: ROUTE_PATHS.LOGIN,
         element: <LoginPage/>,

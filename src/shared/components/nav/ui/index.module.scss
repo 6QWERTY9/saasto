@@ -22,6 +22,7 @@
     @include respond-between('small', 'xlarge') {
         & {
             .nav_items {
+
                 flex-direction: column;
                 align-items: center;
             }

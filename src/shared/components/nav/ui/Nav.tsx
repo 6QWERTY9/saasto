@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import css from './index.module.scss';
+import clsx from 'clsx';
 
-export const Nav = () => {
+export const Nav = ({isMobile}: {isMobile: boolean}) => {
   return (
-    <nav className={css.nav_wrapper}>
+    <nav className={clsx(css.nav_wrapper, {[css.modile_view]: isMobile})}>
       <ul className={css.nav_items}>
         <li>
           <Link to={'/demos'}>Demos</Link>
