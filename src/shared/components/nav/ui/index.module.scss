@@ -1,0 +1,30 @@
+@use '../../../styles/vars' as *;
+@use '../../../styles/mixins' as *;
+
+.nav_wrapper {
+    width: 100%;
+    height: 5%;
+    .nav_items {
+        display: flex;
+        justify-content: center;
+        gap: 48px;
+
+        & > li > a {
+            @include textStyle($size: 18px);
+            transition: color 120ms ease-in-out;
+            &:hover {
+                color: $gray;
+            }
+        }
+
+    }
+
+    @include respond-between('small', 'xlarge') {
+        & {
+            .nav_items {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+}

@@ -1,13 +1,29 @@
 $defaultFont: "Poppins", sans-serif;
 
-$black: #18063C;
+$black: #1C0E0D;
+$darkBlue: #18063C;
 $gray: #404040;
 $blue: #70D0DC;
 $purple: #7562E0;
 $orange: #FA865F;
 $yellow: #FFC954;
 $pink: #FE6292;
-$violet: #6B72FF
+$violet: #6B72FF;
+
+
+$breakpoints: (
+    'small': 320px,
+    // Телефоны
+    'medium': 600px,
+    // Крупные телефоны / мелкие планшеты
+    'large': 768px,
+    // Планшеты
+    'xlarge': 1024px,
+    // Ноутбуки
+    'xxlarge': 1440px,
+    // Мониторы
+    'fullhd': 1920px, // Большие экраны
+);
 
 
 

@@ -1,0 +1,49 @@
+@use '../../../shared/styles/mixins' as *;
+@use '../../../shared/styles/vars' as *;
+
+.auth_buttons_wrapper {
+    
+    width: 300px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 10px;
+    .login_btn, .sing_up_btn {
+        width: 133px;
+        height: 100%;
+
+        background: rebeccapurple;
+        border-radius: 34px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include textStyle($size: 18px, $weight: 500);
+    }
+
+    .login_btn {
+        background: transparent;
+        color: $orange;
+        transition: all 150ms ease-in-out;
+        &:hover {
+            border: 2px solid $orange;
+            text-decoration: underline;
+        }
+    }
+
+    .sing_up_btn {
+        background: $orange;
+        color: #fff;
+        transition: all 150ms ease-in-out;
+        &:hover {
+            background: #fff;
+            border: 2px solid $orange;
+            color: $orange;
+            text-decoration: underline;
+        }
+    }
+}
