@@ -3,10 +3,11 @@
 
 .nav_wrapper {
     width: 100%;
-    height: 5%;
+    height: max-content;
     .nav_items {
         display: flex;
         justify-content: center;
+        align-items: center;
         gap: 48px;
 
         & > li > a {
@@ -19,7 +20,7 @@
 
     }
 
-    @include respond-between('small', 'xlarge') {
+    @include respond-between('small', 'large') {
         & {
             .nav_items {
 

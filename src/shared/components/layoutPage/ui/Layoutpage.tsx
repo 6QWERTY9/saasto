@@ -7,7 +7,9 @@ export const Layoutpage = ({children}: {children: React.ReactNode}) =>  {
     <div className={css.container}>
       <Header/>
       <main className={css.main}>
-        {children}
+        <div>
+          {children}
+        </div>
       </main>
       <Footer/>
     </div>

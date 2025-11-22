@@ -9,7 +9,7 @@ body,
 body {
     font-family: $defaultFont;
     
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 *,
@@ -27,3 +27,4 @@ a {
 ul {
     list-style: none;
 }
+

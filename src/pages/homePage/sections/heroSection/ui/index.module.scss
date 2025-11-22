@@ -1,0 +1,200 @@
+@use '../../../../../shared/styles/mixins' as *;
+@use '../../../../../shared/styles/vars' as *;
+
+.hero_section_wrapper {
+    width: 100%;
+    height: 100vh;  // Добавил для полного экрана на мобильных
+    background: #FFF8F2;
+    position: relative;  // Базово для absolute внутри, если нужно
+    overflow: hidden;  // Чтобы изображения не вылезали
+    display: flex;  // Базово flex для мобильных, чтобы всё центрировалось
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10%;  // Переместил сюда для consistency
+
+    .hero_section_content {
+        text-align: center;
+        flex: 1;  // Занимает пространство в flex
+
+        .hero_section_content_text {  // Добавил базово для мобильных
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            display: inline-block;
+            max-width: 100%;  // На мобильных — полный
+            @include textStyle($size: 28px, $weight: 600, $lineHeight: 28px);
+        }
+
+        p {
+            display: inline-block;
+            max-width: 100%;
+            margin-top: 40px;
+            @include textStyle($size: 16px, $weight: 400, $lineHeight: 36px, $color: #40201E);
+        }
+
+        .cta_btn {
+            width: 240px;
+            height: 76px;
+            margin-top: 40px;  // После p
+            background: $orange;
+            border: none;
+            border-radius: 40px;
+            transition: all 120ms ease-in-out;
+            @include textStyle($size: 18px, $weight: 500, $lineHeight: 28px, $color: #fff);
+            cursor: pointer;  // Добавил для usability
+
+            &:hover {
+                border: 2px solid $orange;
+                background: #fff;
+                color: $orange;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .download_stats {
+        margin-top: 40px;
+        width: 100%;  // Для мобильных
+
+        div {
+            display: flex;
+            flex-direction: column;  // Стек на мобильных
+            align-items: center;  // Центрируем карточки
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+        }
+    }
+
+    img {
+        display: none;  // Скрыты на мобильных
+        position: absolute;  // Базово absolute
+    }
+
+    // Tablet и выше: показываем grid, изображения, увеличиваем текст
+    @media (min-width: 1024px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        padding: 0;  // Убираем padding для grid
+        align-items: stretch;  // Для полного заполнения
+
+        .hero_section_content {
+            grid-row: 1;
+            grid-column: 1 / 4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5%;  // Лёгкий padding
+
+            h1 {
+                max-width: 60%;
+                @include textStyle($size: 64px, $weight: 900, $lineHeight: 90px);
+            }
+
+            p {
+                max-width: 50%;
+                @include textStyle($size: 20px, $weight: 400, $lineHeight: 36px, $color: #40201E);
+            }
+
+            .cta_btn {
+                margin-top: 40px;  // Оставляем
+            }
+        }
+
+        .download_stats {
+            grid-row: 2 / 7;
+            grid-column: 1 / 4;
+            height: 100%;
+            background: white;
+            z-index: 1;
+            margin-top: 0;  // В grid не нужно
+
+            div {
+                height: 100%;
+                flex-direction: row;  // Рядом на десктопе
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                width: auto;  // Не 100%
+            }
+        }
+
+        img {
+            display: block;  // Показываем
+        }
+
+        .mobile_icon {
+            bottom: 15%;
+        }
+
+        .second_mobile_icon {
+            position: absolute;  // Добавил!
+            right: 0;
+            bottom: 10%;
+        }
+
+        .clock_icon {
+            top: 10%;
+            left: 18%;
+        }
+
+        .clipboard_icon {
+            top: 38%;
+            right: 22%;
+        }
+    }
+
+    // Desktop: тонкие корректировки (размеры иконок, позиции)
+    @media (min-width: 1024px) and (max-width: 1525px) {  // Твой диапазон, но с min-width основы
+        .clock_icon,
+        .clipboard_icon {
+            width: 100px;
+            height: 100px;
+        }
+
+        .clock_icon {
+            top: 8%;
+            left: 15%;
+        }
+
+        .clipboard_icon {
+            top: 10%;  // Изменил на 10%, как в твоём втором медиа
+            right: 15%;
+        }
+
+        .second_mobile_icon {
+            bottom: -12%;  // Корректировка
+        }
+
+        .mobile_icon {
+            bottom: -14%;
+        }
+    }
+
+    // Для очень больших экранов (>1920px), если нужно — добавь @media (min-width: 1926px) с корректировками
+}
+.download_stat_card {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    
+
+    h2 {
+        @include textStyle($size: 48px, $weight: 600, $lineHeight: 64px, $color: $darkBlue)
+    }
+
+    span {
+        @include textStyle($size: 18px, $weight: 400, $lineHeight: 18px, $color:#404040)
+    }
+}
+
+
+
+

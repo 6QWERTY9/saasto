@@ -3,6 +3,7 @@ import type { RouteObject } from 'react-router-dom'; // Импорт типа и
 import { ROUTE_PATHS } from './routesPath';
 import { LoginPage } from '@pages/login/login';
 import { Home } from '@pages/homePage/home';
+import { SingUpPage } from '@pages/singUp';
 
 // Определяем тип для маршрута с мета-информацией
 interface RouteMeta {
@@ -24,6 +25,11 @@ export const routes: AppRoute[] = [
     {
         path: ROUTE_PATHS.LOGIN,
         element: <LoginPage/>,
+        meta: {title: 'login page'},
+    },
+    {
+        path: ROUTE_PATHS.SINGUP,
+        element: <SingUpPage/>,
         meta: {title: 'login page'},
     }
     // Добавь новые маршруты сюда, например:

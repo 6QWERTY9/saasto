@@ -4,6 +4,12 @@
     min-height: 100vh;
 
     .main {
+        & > div {
+            
+
+            margin-top: 35px;
+            margin-bottom: 35px;
+        }
         flex-grow: 1;
     }
 }

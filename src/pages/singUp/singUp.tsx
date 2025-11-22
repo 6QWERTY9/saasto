@@ -1,7 +1,11 @@
-export const singUpPage = () => {
+import { Layoutpage } from "@shared/components/layoutPage"
+
+export const SingUpPage = () => {
     return (
-        <div>
-            There will be a sing Up form here.
-        </div>
+        <Layoutpage>
+            <div>
+                There will be a sing Up form here.
+            </div>
+        </Layoutpage>
     )
 }
