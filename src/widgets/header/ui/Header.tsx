@@ -22,7 +22,7 @@ export const Header = () =>  {
           <MobileNavOpenButton onClick={handleOpenMobileNav} isOpen={isOpen}/>
         ) : (
           <>
-            <Nav isMobile={false}/>
+            <Nav/>
             <Auth/>
           </>
         )}
@@ -48,7 +48,7 @@ const MobileNav = ({open}: {open: boolean}) => {
   return (
     <div className={`${css.mobile_nav} ${open ? css.mobile_nav_open : css.mobile_nav_closed}`} aria-label="mobile navigation">
       <div className={css.mobile_nav_content}>
-        <Nav isMobile={true}/>
+        <Nav/>
       </div>
     </div>
   )
