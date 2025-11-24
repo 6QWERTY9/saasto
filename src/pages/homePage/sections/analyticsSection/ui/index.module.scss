@@ -1,0 +1,32 @@
+.analytic_section_wrapper {
+    margin-top: 10%;
+    display: grid;
+    justify-content: center;
+
+    .content_wrapper {
+        display: flex;
+        align-items: center;
+        gap: 200px;
+    }
+
+    @media (max-width: 768px) {
+        & {
+            margin-top: 0;
+            .content_wrapper {
+                
+                flex-direction: column;
+                gap: 30px;
+                .mobile_sreen {
+                    width: 163px;
+                    height: 334px;
+                }
+
+                .metrics_data {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 70px;
+                }
+            }
+        }
+    }
+}

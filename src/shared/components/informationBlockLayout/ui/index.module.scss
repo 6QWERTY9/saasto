@@ -68,12 +68,12 @@
         }
 
         &.row {
-            width: 350px;
+            width: 100%;
             height: 85px;
-            padding: 0;
+            padding: 0px;
             border-radius: 0;
             align-items: flex-start;
-            gap: 18px;
+            
 
             .text_content {
                 max-width: 309px;

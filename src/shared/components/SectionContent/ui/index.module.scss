@@ -31,14 +31,16 @@
             gap: 36px;
 
             .text_content {
-                padding: 60px;
+                min-width: 320px;
+                
                 .title {
-                    @include textStyle($size: 20px, $weight: 600, $lineHeight: 150%, $color: #404040);
+                    @include textStyle($size: 18px, $weight: 600, $lineHeight: 150%, $color: #404040);
                 } 
                 .paragraph {
                     display: inline-block;
                     
-                    @include textStyle($size: 16px, $weight: 400, $lineHeight: 180%, $color: #404040);
+                    width: 250px;
+                    @include textStyle($size: 14px, $weight: 400, $lineHeight: 180%, $color: #404040);
                 }
             }
         }

@@ -1,12 +1,7 @@
-import type { informationBlockLayoutProps } from "@shared/components/informationBlockLayout";
-import type { sectionContentProps } from "@shared/components/SectionContent";
-
-interface benefitsDataProps extends  Omit<sectionContentProps, 'children'> {
-    benefits: informationBlockLayoutProps[];
-}
+import type { generalDataProps } from "@shared/genralTypes";
 
 
-export const benefitsData: benefitsDataProps = {
+export const benefitsData: generalDataProps = {
     title: 'Some excellent features for you',
     paragraph: 'An enim nullam tempor sapien gravida donec enim ipsum porta justo  congue magna at pretium purus pretium ligula ',
 
