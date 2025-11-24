@@ -36,7 +36,7 @@ export const Header = () =>  {
 
 const Logo = () => {
   return (
-    <Link to={'/'} className={css.logo_wrapper}>
+    <Link to={'/saasto/'} className={css.logo_wrapper}>
       <img src={getAssetPath('/logo.svg')} alt="logo" width={'40px'} height={'40px'} className={css.logo} />
       <span className={css.logo_title} >SaaSto</span>
     </Link>
