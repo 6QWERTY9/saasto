@@ -5,6 +5,7 @@ import { Herosection } from "./sections/heroSection"
 import { Benefitssection } from "./sections/benefitsSection"
 import { AnalyticsSection } from "./sections/analyticsSection"
 import { Trackersection } from "./sections/trackerSection"
+import { Pricesection } from "./sections/priceSection"
 
 export const Home = () => {
     return (
@@ -13,6 +14,7 @@ export const Home = () => {
             <Benefitssection/>
             <AnalyticsSection/>
             <Trackersection/>
+            <Pricesection/>
         </Layoutpage>
     )
 }

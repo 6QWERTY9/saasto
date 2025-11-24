@@ -27,3 +27,22 @@
         }
     }
 }
+
+@mixin price-card-variant($bg: transparent, $border: none, $title-color: $text-color, $advantages-color: $primary-color, $price-color: $text-color, $button-bg: $primary-color, $button-color: $white) {
+    background: $bg;
+    border: $border;
+    
+    .price_card_title { color: $title-color; }
+    .advantages { color: $advantages-color; }
+    .price_wrapper .pretitle, .price_wrapper .price, .price_wrapper .period { color: $price-color; }
+    .free_trial {
+        background: $button-bg;
+        color: $button-color;
+        &:focus {
+            
+            color: $button-color;
+            border: 1px solid $button-bg;
+            text-decoration: underline;
+        }
+    }
+}

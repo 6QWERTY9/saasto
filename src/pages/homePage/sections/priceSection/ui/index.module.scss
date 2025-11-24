@@ -1,0 +1,155 @@
+@use '../../../../../shared/styles/mixins' as *;
+@use '../../../../../shared/styles/vars' as *;
+
+.price_card {
+    max-width: $card-width-desktop;
+    max-height: $card-height-desktop;
+    width: 100%;
+    height: $card-height-desktop;
+    border-radius: $border-radius-desktop;
+
+    .price_card_content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        
+        .price_card_title {
+            @include textStyle($size: 48px, $weight: 600, $lineHeight: 100%)
+        }
+
+        .advantages {
+            display: flex;
+            flex-direction: column;
+    
+            text-align: center;
+            gap: 20px;
+    
+            @include textStyle($size: 28px, $weight: 600, $lineHeight: 52px)
+        }
+
+        .price_wrapper {
+            width: max-content;
+            height: max-content;
+
+            display: flex;
+            .pretitle {
+                align-self: flex-start;
+                @include textStyle($size: 18px, $weight: 500, $lineHeight: 28px)
+            }
+            .price {
+                @include textStyle($size: 64px, $weight: 700, $lineHeight: 100%)
+            }
+            .period {
+                align-self: flex-end;
+                @include textStyle($size: 18px, $weight: 500, $lineHeight: 28px)
+            }
+        }
+
+        .free_trial {
+            width: 240px;
+            height: 70px;
+
+            border: none;
+
+            border-radius: 40px;
+            @include textStyle($size: 18px, $weight: 500, $lineHeight: 28px);
+
+            cursor: pointer;
+        }
+    }
+
+
+    &:first-child {
+        @include price-card-variant($border: 1px solid $primary-color, $title-color: $text-color, $advantages-color: $primary-color, $price-color: $text-color, $button-bg: $primary-color, $button-color: $white);
+    }
+    &:last-child {
+        @include price-card-variant($bg: $primary-color, $title-color: $white, $advantages-color: $white, $price-color: $white, $button-bg: $white, $button-color: $primary-color);
+        .free_trial {
+            &:focus { border: 1px solid #dc341d; $color: black }
+        }
+    }
+
+
+    @media (max-width: 768px) {
+        & {
+            width: $card-width-mobile;
+            height: $card-height-mobile;
+            border-radius: $border-radius-mobile;
+            display: flex;
+            justify-content: center;
+            
+            .price_card_content {
+                
+                display: grid;
+                grid-template-columns: 120px 1fr;
+                padding-left: 20px;
+
+
+
+                .price_wrapper > .pretitle,
+                .price_wrapper > .period,
+                .advantages,
+                .free_trial {
+                    @include textStyle($size: 18px, $weight: 500, $lineHeight: 28px);
+                }
+
+                .price_wrapper {
+                    grid-row: 1;
+                    grid-column: 2;
+                    justify-self: end;
+                    padding-right: 20px;
+                    .price {
+                        @include textStyle($size: 28px, $weight: 700, $lineHeight: 100%);
+                    }
+                }
+
+                .price_card_title {
+                    @include textStyle($size: 20px, $weight: 600, $lineHeight: 28px);
+
+                    grid-row: 1;
+                    grid-column: 1;
+                }
+
+                .advantages {
+                    text-align: start;
+                    grid-row: 2;
+                    grid-column: 1/2;
+                    justify-self: start;
+                    white-space: nowrap;
+                }
+                .free_trial {
+                    width: 240px;
+                    grid-row: 3;
+                    grid-column: 1/2;
+                    margin-left: 20px;
+                    
+                }
+            }
+
+            &:first-child {
+            @include price-card-variant($border: 1px solid $primary-color, $title-color: $text-color, $advantages-color: $primary-color, $price-color: $text-color, $button-bg: $primary-color, $button-color: $white);
+            }
+            
+            &:last-child {
+                @include price-card-variant($bg: $primary-color, $title-color: $white, $advantages-color: $white, $price-color: $white, $button-bg: $white, $button-color: $primary-color);
+            }
+            }
+    }
+}
+
+.prices_wrapper {
+    
+    display: flex;
+    justify-content: center;
+    
+    gap: 30px;
+    @media (max-width: 768px) {
+        
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
