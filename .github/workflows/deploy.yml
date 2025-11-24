@@ -1,0 +1,41 @@
+name: Deploy React App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Запускать при пуше в основную ветку
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write # <-- Это критически важное разрешение
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Или другая актуальная версия Node.js
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      # Специальный шаг для загрузки артефактов сборки
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist' # Vite по умолчанию собирает файлы в папку 'dist'
+
+      # Шаг развертывания
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
