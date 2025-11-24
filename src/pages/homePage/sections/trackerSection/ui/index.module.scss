@@ -1,0 +1,26 @@
+.tracker_section {
+    display: grid;
+    justify-content: center;
+    background: #F3FDFE;
+
+    margin-top: 10%;
+
+    .content_wrapper {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+    @media (max-width: 768px) {
+        & {
+            margin-top: 0;
+
+            .content_wrapper {
+                flex-direction: column;
+                .statistics_image {
+                    display: none;
+                }
+            }
+        }
+    }
+}
