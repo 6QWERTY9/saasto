@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import css from './index.module.scss';
-import { Contentwrapper } from '@shared/components/contentWrapper';
 import { getAssetPath } from '@shared/lib';
 
 

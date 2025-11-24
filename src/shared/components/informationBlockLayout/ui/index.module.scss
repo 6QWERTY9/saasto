@@ -1,0 +1,97 @@
+@use '../../../styles/mixins' as *;
+@use '../../../styles/vars' as *;
+
+.info_block_layout {
+    width: max-content;
+    height: max-content;
+
+    padding: 30px;
+    border-radius: 48px;
+    display: flex;
+
+    &.column {
+        flex-direction: column;
+        
+        gap: 48px;
+
+        .text_content {
+            max-width: 305px;
+            .title {
+                @include textStyle($size: 28px, $weight: 600, $lineHeight: 100%, $color: #fff);
+            }
+
+            .description {
+                @include textStyle($size: 18px, $weight: 400, $lineHeight: 28px, $color: #fff);
+                margin-top: 20px;
+            }
+        }
+    }
+
+    &.row {
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+
+        .text_content {
+            max-width: 365px;
+            .title {
+                @include textStyle($size: 28px, $weight: 600, $lineHeight: 36px, $color: #404040);
+            }
+
+            .description {
+                @include textStyle($size: 18px, $weight: 400, $lineHeight: 28px, $color: #404040);
+                margin-top: 20px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        // Для планшетов: переключаемся на row, корректируем размеры
+        padding: 24px; // Меньше padding для планшетов
+        border-radius: 30px;
+        
+        &.column {
+            width: 303px;
+            height: 200px;
+            gap: 18px;
+            .text_content {
+                max-width: 290px; // Корректировка для планшетов
+                .title {
+                    @include textStyle($size: 20px, $weight: 600, $lineHeight: 100%, $color: #fff); // Больше размер для планшетов
+                }
+    
+                .description {
+                    @include textStyle($size: 16px, $weight: 400, $lineHeight: 26px, $color: #fff);
+                    margin-top: 16px; // Меньше отступ
+                }
+            }
+        }
+
+        &.row {
+            width: 350px;
+            height: 85px;
+            padding: 0;
+            border-radius: 0;
+            align-items: flex-start;
+            gap: 18px;
+
+            .text_content {
+                max-width: 309px;
+                .title {
+                    @include textStyle($size: 18px, $weight: 600, $lineHeight: 120%, $color: #404040);
+                }
+
+                .description {
+                    @include textStyle($size: 14px, $weight: 400, $lineHeight: 180%, $color: #404040);
+                    margin-top: 10px;
+                }
+            }
+        }
+
+        // Если есть иконки (из предыдущих обсуждений), добавь:
+        // position: relative;
+        // z-index: 1;
+    }
+}
+
+
